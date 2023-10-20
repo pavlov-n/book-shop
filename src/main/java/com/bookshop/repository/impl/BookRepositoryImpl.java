@@ -5,6 +5,7 @@ import com.bookshop.exception.EntityNotFoundException;
 import com.bookshop.model.Book;
 import com.bookshop.repository.BookRepository;
 import java.util.List;
+import java.util.Optional;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
@@ -34,5 +35,10 @@ public class BookRepositoryImpl implements BookRepository {
         } catch (Exception e) {
             throw new EntityNotFoundException("Can't get all books from DB", e);
         }
+    }
+
+    @Override
+    public Optional<Book> findById(Long id) {
+        return sessionFactory.fromSession(s -> Optional.ofNullable(s.get(Book.class, id)));
     }
 }
