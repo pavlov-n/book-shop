@@ -3,6 +3,8 @@ package com.bookshop.controller;
 import com.bookshop.dto.BookDto;
 import com.bookshop.dto.CreateBookRequestDto;
 import com.bookshop.service.BookService;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Positive;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -30,26 +32,26 @@ public class BookController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{id}")
-    public BookDto getBookById(@PathVariable Long id) {
+    public BookDto getBookById(@PathVariable @Positive Long id) {
         return bookService.findById(id);
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public BookDto createBook(@RequestBody CreateBookRequestDto bookDto) {
+    public BookDto createBook(@RequestBody @Valid CreateBookRequestDto bookDto) {
         return bookService.save(bookDto);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable @Positive Long id) {
         bookService.deleteById(id);
     }
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/{id}")
-    public BookDto updateBookById(@PathVariable Long id,
-                                  @RequestBody CreateBookRequestDto updateBookRequestDto) {
+    public BookDto updateBookById(@PathVariable @Positive Long id,
+                                  @RequestBody @Valid CreateBookRequestDto updateBookRequestDto) {
         return bookService.updateById(id, updateBookRequestDto);
     }
 }
