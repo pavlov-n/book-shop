@@ -11,7 +11,6 @@ public record CreateBookRequestDto(
         String title,
         @NotBlank
         String author,
-        @NotBlank
         @Pattern(regexp = "^\\d{3}-\\d{10}$")
         String isbn,
         @NotNull
