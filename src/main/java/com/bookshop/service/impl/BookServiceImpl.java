@@ -7,10 +7,9 @@ import com.bookshop.mapper.BookMapper;
 import com.bookshop.model.Book;
 import com.bookshop.repository.BookRepository;
 import com.bookshop.service.BookService;
-
-import org.springframework.data.domain.Pageable;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
