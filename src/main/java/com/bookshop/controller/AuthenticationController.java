@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @Validated
-@RequestMapping(value = "/api/auth")
+@RequestMapping(value = "/auth")
 @Tag(name = "Book store Authentication",
         description = "Endpoints for authentication and registration")
 public class AuthenticationController {
