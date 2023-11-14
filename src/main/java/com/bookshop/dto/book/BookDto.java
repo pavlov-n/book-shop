@@ -10,4 +10,5 @@ public record BookDto(
         BigDecimal price,
         String description,
         String coverImage
-) {}
+) {
+}

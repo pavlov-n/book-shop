@@ -1,10 +1,14 @@
 package com.bookshop.dto.user;
 
+import com.bookshop.validation.FieldMatch;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
+@FieldMatch(message = "Password don`t match",
+        field = "password",
+        fieldMatch = "repeatPassword")
 public record UserRegistrationRequestDto(
         @NotNull @Email
         String email,
@@ -23,6 +27,5 @@ public record UserRegistrationRequestDto(
         String lastName,
 
         @NotNull @Size(max = 128)
-        String shippingAddress
-) {
+        String shippingAddress) {
 }

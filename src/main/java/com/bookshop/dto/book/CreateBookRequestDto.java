@@ -18,4 +18,5 @@ public record CreateBookRequestDto(
         BigDecimal price,
         String description,
         String coverImage
-){}
+){
+}

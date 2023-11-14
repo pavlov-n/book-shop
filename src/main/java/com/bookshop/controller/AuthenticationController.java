@@ -11,7 +11,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
-@Validated
 @RequestMapping(value = "/api/auth")
 @Tag(name = "Book store Authentication",
         description = "Endpoints for authentication and registration")
@@ -42,7 +40,3 @@ public class AuthenticationController {
         return authenticationService.authenticate(request);
     }
 }
-
-
-
-
