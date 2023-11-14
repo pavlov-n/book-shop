@@ -22,5 +22,5 @@ public record CreateBookRequestDto(
         String description,
         @Size(max = 1024)
         String coverImage,
-        List<Long> categoryIds
-){}
+        List<Long> categoryIds){
+}
