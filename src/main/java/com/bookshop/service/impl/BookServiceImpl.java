@@ -10,11 +10,9 @@ import com.bookshop.model.Category;
 import com.bookshop.repository.BookRepository;
 import com.bookshop.repository.CategoryRepository;
 import com.bookshop.service.BookService;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

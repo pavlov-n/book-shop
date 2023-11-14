@@ -29,7 +29,7 @@ public class CategoryServiceImpl implements CategoryService {
     public CategoryResponseDto findById(Long id) {
         return categoryRepository.findById(id)
                 .map(categoryMapper::toDto)
-                .orElseThrow(() ->new EntityNotFoundException(
+                .orElseThrow(() -> new EntityNotFoundException(
                         "can't find category with such id: %d".formatted(id)));
     }
 

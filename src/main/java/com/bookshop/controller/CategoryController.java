@@ -8,8 +8,8 @@ import com.bookshop.service.CategoryService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import java.util.List;
 import jakarta.validation.constraints.Positive;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -68,7 +68,7 @@ public class CategoryController {
     @PostMapping
     @Operation(summary = "Create category",
             description = "Create a new category")
-    public CategoryResponseDto createCategory(@RequestBody @Valid CategoryRequestDto requestDto){
+    public CategoryResponseDto createCategory(@RequestBody @Valid CategoryRequestDto requestDto) {
         return categoryService.save(requestDto);
     }
 

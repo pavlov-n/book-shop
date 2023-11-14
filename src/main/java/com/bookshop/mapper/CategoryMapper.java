@@ -21,5 +21,6 @@ public interface CategoryMapper {
     Category toCategory(CategoryRequestDto categoryDto);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void updateCategory(CategoryRequestDto updatedRequestDto, @MappingTarget Category categoryToUpdate);
+    void updateCategory(CategoryRequestDto updatedRequestDto,
+                        @MappingTarget Category categoryToUpdate);
 }

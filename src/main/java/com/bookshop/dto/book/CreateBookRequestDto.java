@@ -9,9 +9,9 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public record CreateBookRequestDto(
-        @NotBlank  @Size(max = 256)
+        @NotBlank @Size(max = 256)
         String title,
-        @NotBlank  @Size(max = 256)
+        @NotBlank @Size(max = 256)
         String author,
         @Pattern(regexp = "^\\d{3}-\\d{10}$")
         String isbn,
