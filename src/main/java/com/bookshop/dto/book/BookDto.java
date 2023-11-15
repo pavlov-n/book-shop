@@ -1,4 +1,4 @@
-package com.bookshop.dto;
+package com.bookshop.dto.book;
 
 import java.math.BigDecimal;
 
@@ -10,4 +10,5 @@ public record BookDto(
         BigDecimal price,
         String description,
         String coverImage
-) {}
+) {
+}

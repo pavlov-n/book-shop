@@ -1,4 +1,4 @@
-package com.bookshop.dto;
+package com.bookshop.dto.book;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -18,4 +18,5 @@ public record CreateBookRequestDto(
         BigDecimal price,
         String description,
         String coverImage
-){}
+){
+}
