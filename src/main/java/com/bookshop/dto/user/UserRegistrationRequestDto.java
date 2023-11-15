@@ -8,13 +8,13 @@ import jakarta.validation.constraints.Size;
 
 @FieldMatch(message = "Password don`t match",
         field = "password",
-        fieldMatch = "repeatPassword")
+        fieldMatch = "verifyPassword")
 public record UserRegistrationRequestDto(
-        @NotNull @Email
+        @NotNull @Email @Size(min = 8, max = 32)
         String email,
-        @NotNull @Size(min = 4, max = 32)
+        @NotNull
         @Pattern(
-                regexp = "^[a-zA-Z0-9]{6,}$",
+                regexp = "^[a-zA-Z0-9]{6,32}$",
                 message = "Password must contain at least one digit and letter"
         )
         String password,
