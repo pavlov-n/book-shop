@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create-table-users
+      id: create-table-categories
       author: pavlovn
       changes:
         - createTable:
-            tableName: users
+            tableName: categories
             columns:
               - column:
                   name: id
@@ -14,29 +14,13 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: email
-                  type: varchar(32)
-                  constraints:
-                    nullable: false
-                    unique: true
-              - column:
-                  name: password
-                  type: varchar(128)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: first_name
+                  name: name
                   type: varchar(32)
                   constraints:
                     nullable: false
               - column:
-                  name: last_name
-                  type: varchar(32)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: shipping_address
-                  type: varchar(128)
+                  name: description
+                  type: varchar(256)
               - column:
                   name: is_deleted
                   type: boolean
