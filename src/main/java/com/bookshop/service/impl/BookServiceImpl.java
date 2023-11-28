@@ -42,7 +42,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public BookDto save(CreateBookRequestDto requestDto) {
         Book book = bookMapper.toBook(requestDto);
-        addCategoriesIfPresent(requestDto.categoryIds(), book);
+        addCategoriesIfPresent(requestDto.categoriesIds(), book);
         return bookMapper.toDto(bookRepository.save(book));
     }
 
@@ -52,7 +52,7 @@ public class BookServiceImpl implements BookService {
                 .orElseThrow(() -> new EntityNotFoundException(
                         "Can't find book with id: %d".formatted(id)));
         bookMapper.updateBook(requestDto, bookToUpdate);
-        addCategoriesIfPresent(requestDto.categoryIds(), bookToUpdate);
+        addCategoriesIfPresent(requestDto.categoriesIds(), bookToUpdate);
         return bookMapper.toDto(bookRepository.save(bookToUpdate));
     }
 
