@@ -41,7 +41,6 @@ public class UserServiceImpl implements UserService {
         ShoppingCart shoppingCart = new ShoppingCart();
         shoppingCart.setUser(user);
         user.setShoppingCart(shoppingCart);
-
     }
 
     private Set<Role> getDefaultRoles() {
