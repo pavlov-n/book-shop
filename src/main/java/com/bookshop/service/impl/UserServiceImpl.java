@@ -6,6 +6,7 @@ import com.bookshop.exception.RegistrationException;
 import com.bookshop.mapper.UserMapper;
 import com.bookshop.model.Role;
 import com.bookshop.model.RoleName;
+import com.bookshop.model.ShoppingCart;
 import com.bookshop.model.User;
 import com.bookshop.repository.RoleRepository;
 import com.bookshop.repository.UserRepository;
@@ -32,7 +33,14 @@ public class UserServiceImpl implements UserService {
         User user = userMapper.toUser(request);
         user.setPassword(passwordEncoder.encode(request.password()));
         user.setRoles(getDefaultRoles());
+        createUserShoppingCart(user);
         return userMapper.toDto(userRepository.save(user));
+    }
+
+    private void createUserShoppingCart(User user) {
+        ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.setUser(user);
+        user.setShoppingCart(shoppingCart);
     }
 
     private Set<Role> getDefaultRoles() {
