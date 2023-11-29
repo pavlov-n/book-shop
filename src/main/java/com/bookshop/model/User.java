@@ -61,7 +61,8 @@ public class User implements UserDetails {
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.REMOVE)
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL, orphanRemoval = true)
     private ShoppingCart shoppingCart;
 
     @Column(name = "is_deleted", nullable = false)
