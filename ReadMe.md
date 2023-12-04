@@ -22,7 +22,7 @@
 `Follow the steps below to install:`
 1. Clone the repository from GitHub and navigate to the project directory.
 2. Fill up application.properties and liquibase.properties files with the necessary environment variables.
-3The application should now be running at `http://localhost:8080`.
+3. The application should now be running at `http://localhost:8080`.
 
 ### 👷 Project architecture:
 ![architecture.png](assets%2Farchitecture.png)
