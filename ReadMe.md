@@ -14,15 +14,19 @@
 - 🐬 **MySQL**: The database management system used for data storage.
 - 🌶️ **Lombok**: Reduces boilerplate code with annotations.
 - ↔️ **MapStruct**: Simplifies object mapping between DTOs and entities.
+- 🐋  **Docker**: Used for containerization of the application and database.
 
 ### ❓ How to use
-`Before running the Booking app, ensure you have the following installed:`
+`Before running the Book-shop app, ensure you have the following installed:`
 - ☕ Java Development Kit (JDK)
+- 🐋 Docker and Docker Compose
 
 `Follow the steps below to install:`
 1. Clone the repository from GitHub and navigate to the project directory.
-2. Fill up application.properties and liquibase.properties files with the necessary environment variables.
-3. The application should now be running at `http://localhost:8080`.
+2. Create a `.env` file with the necessary environment variables. (See `.env-sample` for a sample.)
+3. Run the following command to build and start the Docker containers:
+   `docker-compose up --build`.
+4. The application should now be running at `http://localhost:8081`.
 
 ### 👷 Project architecture:
 ![architecture.png](assets%2Farchitecture.png)
